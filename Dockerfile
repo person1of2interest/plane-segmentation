@@ -13,18 +13,21 @@ RUN apt-get update && \
 
 RUN apt-get install --no-install-recommends -y ca-certificates
 RUN git clone --branch=fixes https://github.com/person1of2interest/peac plane_segm
-#To build and run the docker image, do this:
-#sudo docker build -t [name] [path]
-#sudo docker run -it [name] /bin/bash
-#To exit, enter "exit" in the terminal
 RUN cd ./plane_segm/cpp && \
 	mkdir build && \
 	cd build && \
 	cmake .. && \
 	cp ../plane_fitter_pcd.ini . && \
 	make 
-#CMD cd ./plane_segm/cpp/build && \
-#	./plane_fitter_pcd
-#RUN pcl-viewer ../../data/stair/output/record_00080.seg.pcd
 
+
+#To build and run the docker image, do this:
+
+#docker build -t [name] [path]
+#xhost +
+#docker run -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -it [name]:latest /bin/bash
+#cd ./plane_segm/cpp/build
+#./plane_fitter_pcd
+
+#To exit, enter "exit" in the terminal
 
