@@ -40,5 +40,5 @@ Using
 
 1)To open ".png" files use ```xdg-open [filename]```
 
-2)To open ".pcd" files use ```pcl-viewer [filename]```
+2)To open ".pcd" files use ```pcl_viewer [filename]```
   
