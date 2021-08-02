@@ -1,11 +1,13 @@
 import numpy as np
 import open3d as o3d
+from sys import argv
 from sklearn import linear_model
 
+name=argv[1]
 name=input()
 name=name[2:]
 
-pcd=o3d.io.read_point_cloud("output/"+name)
+pcd=o3d.io.read_point_cloud(name)
 
 # Convert Open3D.o3d.geometry.PointCloud to numpy array
 xyz=np.asarray(pcd.points)
