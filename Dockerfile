@@ -12,7 +12,7 @@ RUN apt-get update && \
 	pcl-tools 
 
 RUN apt-get install --no-install-recommends -y ca-certificates
-RUN git clone --branch=fixes https://github.com/person1of2interest/peac plane_segm
+RUN git clone --branch=plane_segm https://github.com/person1of2interest/peac plane_segm
 RUN cd ./plane_segm/cpp && \
 	mkdir build && \
 	cd build && \
